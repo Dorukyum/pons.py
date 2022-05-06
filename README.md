@@ -1,7 +1,7 @@
-<center>
-<h1>pons.py</h1>
-<h3>An API wrapper for the PONS dictionary</h3>
-</center>
+<div align="center">
+  <h1>pons.py</h1>
+  An API wrapper for the PONS dictionary written in Python
+</div>
 
 ## Installation
 ```sh
