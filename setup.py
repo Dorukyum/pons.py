@@ -9,17 +9,17 @@ with open("README.md", encoding="utf-8") as f:
     readme = f.read()
 
 setup(
-    name="",
-    packages=[""],
-    version="",
+    name="pons.py",
+    packages=["pons"],
+    version="1.0.0",
     license="MIT",
-    description="",
+    description="An API wrapper for the PONS dictionary",
     long_description=readme,
     long_description_content_type="text/markdown",
-    author="",
-    url="",
-    keywords="",
-    install_requires=[""],
+    author="Dorukyum",
+    url="https://github.com/Dorukyum/pons.py",
+    keywords="API, dictionary",
+    install_requires=["requests"],
     classifiers=classifiers,
-    project_urls={"Source": ""},
+    project_urls={"Source": "https://github.com/Dorukyum/pons.py"},
 )
