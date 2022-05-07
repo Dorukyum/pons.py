@@ -2,6 +2,7 @@ from typing import Any, Dict, List, Optional
 
 import requests
 
+from .errors import DictionaryNotFound, LimitReached, Unauthorized
 from .models import Dictionary, Hit, Language, create_hit
 
 __all__ = ("Client",)
@@ -21,6 +22,16 @@ class Client:
         res = requests.request(
             "GET", self.base_url + endpoint, params=params, headers=headers
         )
+
+        status = res.status_code
+        if status == 204:
+            return []
+        if status == 403:
+            raise Unauthorized()
+        if status == 404:
+            raise DictionaryNotFound()
+        if status == 503:
+            raise LimitReached()
         return res.json()
 
     def get_dictionaries(self, language: Language) -> List[Dictionary]:
