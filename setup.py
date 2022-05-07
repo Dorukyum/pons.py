@@ -11,7 +11,7 @@ with open("README.md", encoding="utf-8") as f:
 setup(
     name="pons.py",
     packages=["pons"],
-    version="1.0.0",
+    version="1.1.0",
     license="MIT",
     description="An API wrapper for the PONS dictionary",
     long_description=readme,
