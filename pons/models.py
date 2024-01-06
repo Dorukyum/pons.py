@@ -65,7 +65,7 @@ class Rom:
     def __init__(self, data: Dict[str, Any]) -> None:
         self.headword = data["headword"]
         self.headword_full = data["headword_full"]
-        self.wordclass = data["wordclass"]
+        self.wordclass = data.get("wordclass", None)
         self.arabs = [Arab(arab) for arab in data["arabs"]]
 
     def __repr__(self) -> str:
