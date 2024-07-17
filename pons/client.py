@@ -2,7 +2,7 @@ from typing import Any, Dict, List, Optional
 
 import requests
 
-from .errors import DictionaryNotFound, LimitReached, Unauthorized
+from .errors import DictionaryNotFound, LimitReached, Unauthorized, InternalServerError
 from .models import Dictionary, Hit, Language, create_hit
 
 __all__ = ("Client",)
@@ -30,6 +30,8 @@ class Client:
             raise Unauthorized()
         if status == 404:
             raise DictionaryNotFound()
+        if status == 500:
+            raise InternalServerError()
         if status == 503:
             raise LimitReached()
         return res.json()
