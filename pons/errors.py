@@ -18,4 +18,4 @@ class Unauthorized(PONSException):
 
 
 class InternalServerError(PONSException):
-    """An internal error has occurred."""
+    """An internal server error has occurred."""
