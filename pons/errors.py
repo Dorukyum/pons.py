@@ -15,3 +15,7 @@ class LimitReached(PONSException):
 
 class Unauthorized(PONSException):
     """The supplied credentials could not be verified or the access to a dictionary is not allowed."""
+
+
+class InternalServerError(PONSException):
+    """An internal server error has occurred."""
